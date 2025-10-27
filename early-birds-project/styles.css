@@ -246,7 +246,21 @@ body {
   color: var(--color-dark);
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-accent);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -274,6 +288,7 @@ svg * {
   justify-content: space-between;
   align-items: center;
   min-height: 100px;
+  background-color: var(--color-light);
   border: var(--border);
 }
 
@@ -360,6 +375,122 @@ svg * {
   color: var(--color-grey);
 }
 
+.content {
+}
+
+.banner-list {
+  position: relative;
+  display: flex;
+}
+
+.banner-background {
+  position: relative;
+  width: 50%;
+  object-fit: cover;
+  z-index: 1;
+  margin-top: -140px;
+  z-index: -1;
+}
+
+.banner-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 85px;
+  height: 65px;
+  background-color: #FBED81;
+}
+
+.left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.banner-list-body {
+  display: flex;
+  justify-content: start;
+  position: relative;
+  padding-block: 280px;
+  width: 50%;
+}
+
+.banner-crumbs {
+  position: absolute;
+  width: 960px;
+  height: 937px;
+  margin-left: -165px;
+  margin-top: -340px;
+}
+
+.banner-list-body-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left: 130px;
+}
+
+.banner-title {
+  font-size: 120px;
+}
+
+.banner-quality-logo {
+  position: absolute;
+  top: -92px;
+  left: 235px;
+}
+
+.with-love-logo {
+  position: absolute;
+  top: 420px;
+  left: 118px;
+}
+
+@media(max-width: 1400px) {
+  .banner-list-body-container {
+    margin-left: 80px;
+  } 
+}
+
+@media(max-width: 1276px) {
+  .banner-list {
+    flex-direction: column-reverse;
+  }
+
+  .banner-background,
+  .banner-list-body {
+    width: 100%;
+  }
+  
+  .banner-background {
+    height: 40vh;
+  }
+
+  .banner-list-body {
+    justify-content: center;
+  }
+
+  .banner-crumbs {
+  }
+
+  .banner-quality-logo {
+  }
+
+  .with-love-logo {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
 @media(max-width: 650px) {
   .header {
     position: relative;
@@ -414,5 +545,5 @@ svg * {
   .header-logo-image {
     margin: none;
     margin-top: 20px;
-
   }
+}
