@@ -240,7 +240,7 @@ svg * {
 body {
   font-family: var(--font-family-base);
   font-weight: 400;
-  font-size: 18px;
+  font-size: 0.94vw;
   line-height: 1.33;
   background-color: var(--color-light);
   color: var(--color-dark);
@@ -307,6 +307,7 @@ svg * {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: 80px;
 }
 
 .header-menu-list-first {
@@ -317,9 +318,20 @@ svg * {
   column-gap: 23px;
 }
 
+.header-menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .header-menu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: var(--color-dark);
+  height: 50px;
 }
 
 .header-menu-link:hover {
@@ -330,10 +342,10 @@ svg * {
   position: relative;
 }
 
-.is-current::after {
+.header-menu-link.is-current::after {
   content: "";
   position: absolute;
-  bottom: -10px;    
+  top: 60%;    
   left: 50%;
   transform: translateX(-50%);
   width: 140%;
@@ -368,14 +380,11 @@ svg * {
   border: none;
   border: var(--border);
   padding-top: 0;
-
+  background-color: inherit;
 }
 
 .header-star-button:hover {
   color: var(--color-grey);
-}
-
-.content {
 }
 
 .banner-list {
@@ -455,10 +464,137 @@ svg * {
   left: 118px;
 }
 
+.catalog-blands {
+}
+
+.quality-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100vw;
+  border: var(--border);
+}
+
+.catalog-blands-list {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  background-color: var(--color-baige);
+}
+
+.catalog-blands-body {
+  position: relative;
+  width: 50vw;
+  box-sizing: border-box;
+  padding-left: 93px;
+  padding-right: 50px;
+  padding-block: 80px;
+  border: var(--border);
+}
+
+.catalog-blands-body p {
+  white-space: normal;
+}
+
+.catalog-blands-title {
+  font-size: 2.6vw;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  
+}
+
+.stroke {
+  position: relative;
+  display: inline-block;
+}
+
+.stroke::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 110%;
+  background: url(./images/stroke2.png) center/contain no-repeat;
+}
+
+.view-more-link {
+  font-family: var(--font-family-accent);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  white-space: nowrap;
+  display: inline-flex;
+  flex-direction: center;
+  gap: 8px;
+}
+
+.view-more-link::after {
+  content: "";
+  display: inline-block;
+  height: 25px;
+  width: 28px;
+  background: url(./images/arrow-right-little.png) center/contain no-repeat
+}
+
+.view-more-link:hover {
+  color: var(--color-grey);
+}
+
+.catalog-blands-link {
+  margin-top: 50px;
+}
+
+.product-items {
+  display: flex;
+}
+
+.product-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 480px;
+  border: var(--border);
+  background-color: var(--color-baige);
+}
+
+.product-item-description {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 43px;
+  margin-bottom: 35.5px;
+}
+
+.product-item-photo {
+
+}
+
+.product-item-title {
+}
+
+.product-item-price {
+  font-family: var(--font-family-base);
+  line-height: 1,2;
+  font-weight: 400;
+}
+
 @media(max-width: 1400px) {
   .banner-list-body-container {
     margin-left: 80px;
   } 
+
+  .catalog-blands-body {
+    padding-left: 40px;
+    padding-bottom: 0;
+  }
+  
+  .product-item {
+    justify-content: start;
+  }
 }
 
 @media(max-width: 1276px) {
@@ -479,15 +615,31 @@ svg * {
     justify-content: center;
   }
 
-  .banner-crumbs {
-  }
-
-  .banner-quality-logo {
-  }
-
   .with-love-logo {
     margin-top: 0px;
     margin-left: 0px;
+  }
+
+  .catalog-blands-list {
+    flex-direction: column;
+  }
+
+  .catalog-blands-body {
+  position: relative;
+  width: 100vw;
+  box-sizing: border-box;
+  padding-left: 93px;
+  padding-right: 50px;
+  padding-block: 80px;
+  border: var(--border);
+  }
+
+  .catalog-blands-title {
+    font-size: 4vw;
+  }
+
+  .catalog-blands-body p {
+    font-size: 1.5vw;
   }
 }
 
