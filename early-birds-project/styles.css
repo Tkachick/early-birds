@@ -582,6 +582,21 @@ svg * {
   font-weight: 400;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 39.17vw;
+  color: var(--color-light);
+  background: url(./images/section-coffee.jpg) center/cover no-repeat;
+}
+
+.hero-title {
+  font-size: 5.21vw;
+  text-align: center;
+}
+
 @media(max-width: 1400px) {
   .banner-list-body-container {
     margin-left: 80px;
