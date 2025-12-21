@@ -548,12 +548,21 @@ svg * {
 }
 
 .product-item {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
   max-width: 480px;
   border: var(--border);
-  background-color: var(--color-baige);
+  padding-top: 41px;
+  padding-bottom: 35.5px;
+  padding-inline: 43px;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.product-item:hover {
+  background-color: var(--color-grey);
 }
 
 .product-item-description {
@@ -561,8 +570,7 @@ svg * {
   justify-content: start;
   flex-direction: column;
   gap: 5px;
-  padding-left: 43px;
-  margin-bottom: 35.5px;
+  margin-top: 35.5px;
 }
 
 .product-item-price {
@@ -778,6 +786,47 @@ svg * {
   color: var(--color-grey);
 }
 
+.catalog-blands-main-title {
+  font-size: 70px;
+  line-height: 114%;
+  padding-left: 50px;
+}
+
+.catalog-blands-main-title h2 {
+  font-size: 3.65vw;
+  white-space: nowrap;
+}
+
+.catalog-blands-main .product-items {
+  display: flex;
+  border: var(--border);
+}
+
+.product-new,
+.product-sold {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family-accent);
+  font-size: 18px;
+  top: 15px;
+  right: 0;
+  padding-inline: 19px;
+  padding-block: 4px;
+  letter-spacing: 1px;
+}
+
+.product-new {
+  color: var(--color-dark);
+  background-color: #FBED81;
+}
+
+.product-sold {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
 @media(max-width: 1600px) {
     .cofee-cafes-info-item {
       align-items: center;
@@ -854,6 +903,7 @@ svg * {
     margin-bottom: 20px;
   }
 
+
 }
 
 @media(max-width: 1276px) {
@@ -923,6 +973,12 @@ svg * {
     object-fit: cover;
     margin-top: -265px;
     z-index: -1;
+  }
+
+  .catalog-blands-main .product-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 480px));
+    justify-content: center;
   }
 }
 
