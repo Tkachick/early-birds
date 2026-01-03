@@ -273,6 +273,40 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: inherit;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none; /* Helps with consistency */
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+select {
+  -webkit-appearance: none; /* For Chrome, Safari, and Opera */
+  -moz-appearance: none;    /* For Firefox */
+  appearance: none;         /* Standard property */
+  background: none;         /* Optional: removes any default background image or color that might remain in some cases */
+  /* Optional: removes extra padding in some browsers */
+  padding-right: 0;
+  /* Ensure a consistent cursor */
+  cursor: pointer; 
+}
+
+/* For Internet Explorer 10+ */
+select::-ms-expand {
+  display: none;
+}
 
 .header-extra {
   display: flex;
@@ -881,11 +915,117 @@ svg * {
   margin-right: 33px;
 }
 
+.reserve {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 42px;
+  width: 100vw;
+  height: 467px;
+  background: url(./images/crumbs-long.png) center / contain no-repeat;
+}
+
+.reserve-form {
+  position: relative;
+  display: flex;
+  gap: 35px;
+}
+
+.reesrve-form-input-wrapper {
+  position: relative;
+  width: 345px;
+  height: 37px;
+}
+
+.reesrve-form-input-wrapper::after {
+  content: "";
+  position: absolute;
+  background: url(./icons/arrow-down.svg) center / contain no-repeat;
+  width: 18px;
+  height: 10.5px;
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+.reserve-form-title {
+  font-size: 50px;
+}
+
+.reserve-form-input { 
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: inherit;
+  cursor: pointer;
+  border-bottom: var(--border);
+}
+
+.reserve-form-input:hover {
+  border-bottom: 1px solid var(--color-grey);
+} 
+
+.reserve-form-powered {
+  position: absolute;
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+.team {
+  border-block: var(--border);
+}
+
+.team-title {
+  font-size: 70px;
+  margin-block: 33px;
+  margin-left: 50px;
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-worker {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: var(--border);
+  padding-block: 40px;
+  padding-inline: 38px;
+}
+
+.team-worker-photo {
+  border-radius: 10px;
+  width: 245px;
+  height: auto;
+}
+
+.team-worker-name {
+  font-size: 25px;
+  margin-top: 19px;
+}
+
+.team-worker-job {
+  margin-top: 1px;
+}
+
+@media(max-width: 1850px) {
+
+  .team-list {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    justify-content: center;
+    align-content: center;
+    border-top: var(--border);
+  }
+}
+
 @media(max-width: 1600px) {
-    .cofee-cafes-info-item {
-      align-items: center;
-      padding-bottom: 0;
-    }
+  .cofee-cafes-info-item {
+    align-items: center;
+    padding-bottom: 0;
+  }
 
   .cofee-cafes-info-item span {
     display: flex;
@@ -912,7 +1052,6 @@ svg * {
 }
 
 @media(max-width: 1400px) {
-
   .banner-list-body-container {
     margin-left: 80px;
   } 
@@ -957,7 +1096,14 @@ svg * {
     margin-bottom: 20px;
   }
 
+  .reserve {
+    margin-block: 30px;
+  }
 
+  .reserve-form {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
 @media(max-width: 1276px) {
@@ -1061,6 +1207,12 @@ svg * {
     margin-top: 20px;
   }
 
+}
+
+@media(max-width: 1276px) {
+  .team-list {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
 }
 
 @media(max-width: 650px) {
