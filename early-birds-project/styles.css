@@ -1073,6 +1073,34 @@ select::-ms-expand {
   bottom: 13px;
 }
 
+.barista-schools {
+  display: flex;
+  align-items: center;
+  gap: 135px;
+  padding-left: 118px;
+  padding-block: 138px;
+  background-color: var(--color-turquoise);
+}
+
+.barista-schools-image {
+  width: 1133px;
+  height: auto;
+}
+
+.barista-schools-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.barista-schools-title {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.barista-schools-button {
+  margin-top: 58px;
+}
+
 @media(max-width: 1850px) {
 
   .team-list {
@@ -1082,22 +1110,28 @@ select::-ms-expand {
     align-content: center;
     border-top: var(--border);
   }
+
+  .barista-schools {
+    gap: 50px;
+    padding-left: 40px;
+  }
+
 }
 
 @media(max-width: 1650px) {
   .blog-intro-title {
     margin-right: 90px;
   }
-}
 
-@media(max-width: 1500px) {
-  .blog {
+  .barista-schools {
     flex-direction: column;
   }
 
-  .blog-intro-button {
-    position: static;
-    margin-top: 65px;
+    .barista-schools {
+      align-items: center;
+      justify-content: center;
+      padding-inline: 10px;
+      padding-block: 60px;
   }
 }
 
@@ -1128,6 +1162,17 @@ select::-ms-expand {
 
   .coffee-cafes-info-list {
     flex-direction: column-reverse;
+  }
+}
+
+@media(max-width: 1500px) {
+  .blog {
+    flex-direction: column;
+  }
+
+  .blog-intro-button {
+    position: static;
+    margin-top: 65px;
   }
 }
 
