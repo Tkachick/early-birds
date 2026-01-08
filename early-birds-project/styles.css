@@ -265,6 +265,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+.title-long {
+  font-size: 70px;
+  margin-block: 33px;
+  margin-left: 50px;
+}
+
 a,
 button,
 input,
@@ -976,12 +982,6 @@ select::-ms-expand {
   border-block: var(--border);
 }
 
-.team-title {
-  font-size: 70px;
-  margin-block: 33px;
-  margin-left: 50px;
-}
-
 .team-list {
   display: flex;
 }
@@ -1080,6 +1080,7 @@ select::-ms-expand {
   padding-left: 118px;
   padding-block: 138px;
   background-color: var(--color-turquoise);
+  border-bottom:var(--border)
 }
 
 .barista-schools-image {
@@ -1101,8 +1102,22 @@ select::-ms-expand {
   margin-top: 58px;
 }
 
-@media(max-width: 1850px) {
+.supplies-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 384px));
+  justify-content: center;
+  border-top: var(--border);
+}
 
+.supplies-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 311px;
+  border: var(--border);
+}
+
+@media(max-width: 1850px) {
   .team-list {
     display: grid;
     grid-template-columns: repeat(3, 320px);
@@ -1173,6 +1188,11 @@ select::-ms-expand {
   .blog-intro-button {
     position: static;
     margin-top: 65px;
+  }
+
+  .supplies-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 384px));
   }
 }
 
@@ -1348,6 +1368,11 @@ select::-ms-expand {
   .blog-posts-item-link {
     position: static;
     margin-top: 20px;
+  }
+
+  .supplies-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 384px));
   }
 }
 
