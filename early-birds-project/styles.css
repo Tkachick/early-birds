@@ -1117,6 +1117,47 @@ select::-ms-expand {
   border: var(--border);
 }
 
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding-block: 158px;
+  padding-left: 163px;
+  padding-right: 182px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu-item-title {
+  font-size: 20px;
+}
+
+.dotted-line {
+
+}
+
+.menu-item-cost {
+}
+
+.menu-image {
+}
+
 @media(max-width: 1850px) {
   .team-list {
     display: grid;
@@ -1142,11 +1183,15 @@ select::-ms-expand {
     flex-direction: column;
   }
 
-    .barista-schools {
-      align-items: center;
-      justify-content: center;
-      padding-inline: 10px;
-      padding-block: 60px;
+  .barista-schools {
+    align-items: center;
+    justify-content: center;
+    padding-inline: 10px;
+    padding-block: 60px;
+  }
+
+  .menu {
+    flex-direction: column-reverse;
   }
 }
 
