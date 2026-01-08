@@ -1120,6 +1120,7 @@ select::-ms-expand {
 .menu {
   display: flex;
   justify-content: space-between;
+  border-top: var(--border);
 }
 
 .menu-list {
@@ -1149,13 +1150,17 @@ select::-ms-expand {
 }
 
 .dotted-line {
-
+  position: relative;
 }
 
-.menu-item-cost {
-}
-
-.menu-image {
+.dotted-line::after {
+  content: "";
+  position: absolute;
+  background: url(./images/dotted-line.png);
+  width: 100px;
+  height: 1px;
+  left: 115%;
+  bottom: 1px;
 }
 
 @media(max-width: 1850px) {
@@ -1238,6 +1243,10 @@ select::-ms-expand {
   .supplies-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 384px));
+  }
+
+  .menu {
+    flex-direction: column-reverse;
   }
 }
 
