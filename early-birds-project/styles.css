@@ -281,6 +281,7 @@ svg * {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 strong {
@@ -346,7 +347,6 @@ select::-ms-expand {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   height: 80px;
 }
 
@@ -462,6 +462,7 @@ select::-ms-expand {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .banner-list-body {
@@ -478,6 +479,7 @@ select::-ms-expand {
   height: 937px;
   margin-left: -165px;
   margin-top: -340px;
+  z-index: -1;
 }
 
 .banner-list-body-container {
@@ -508,13 +510,13 @@ select::-ms-expand {
   justify-content: center;
   align-items: center;
   height: 60px;
-  width: 100vw;
+  width: 100%;
   border: var(--border);
 }
 
 .catalog-blands-list {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: auto;
   background-color: var(--color-baige);
 }
@@ -623,7 +625,7 @@ select::-ms-expand {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 39.17vw;
   color: var(--color-light);
   background: url(./images/section-coffee.jpg) center/cover no-repeat;
@@ -839,7 +841,7 @@ select::-ms-expand {
 
 .catalog-blands-main .product-items {
   display: flex;
-  border: var(--border);
+  border-block: var(--border);
 }
 
 .product-new,
@@ -928,7 +930,7 @@ select::-ms-expand {
   align-items: center;
   flex-direction: column;
   gap: 42px;
-  width: 100vw;
+  width: 100%;
   height: 467px;
   background: url(./images/crumbs-long.png) center / contain no-repeat;
 }
@@ -986,13 +988,18 @@ select::-ms-expand {
   display: flex;
 }
 
-.team-worker {
+.team-worker-link {
   display: flex;
   align-items: center;
   flex-direction: column;
   border: var(--border);
   padding-block: 40px;
   padding-inline: 38px;
+  transition-duration: var(--transition-duration);
+}
+
+.team-worker-link:hover {
+  background-color: var(--color-grey);
 }
 
 .team-worker-photo {
@@ -1117,6 +1124,18 @@ select::-ms-expand {
   border: var(--border);
 }
 
+.supplies-item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.supplies-item-link:hover {
+  background: grey;
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
@@ -1166,16 +1185,79 @@ select::-ms-expand {
 .follow-us-list {
   display: grid;
   grid-template-columns: repeat(5, 332px);
+  justify-content: center;
   gap: 40px;
   padding: 50px;
   border-block: var(--border);
 }
 
+
+
 .follow-us-item-image {
   border-radius: 10px;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 70px;
+  white-space: nowrap;
+}
+
+.footer-logo {
+  width: 103px;
+  height: 102px;
+  margin-right: 36px;
+}
+
+.footer-body {
+  display: flex;
+  gap: 18.23vw;
+} 
+
+.footer-contacts-list {
+  margin-right: 10.42vw;
+}
+
+.footer-contacts-list,
+.footer-link-list,
+.footer-soc1als-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contacts-item {
+}
+
+.footer-contacts-title {
+}
+
+.footer address {
+  display: inline;
+}
+
+.footer .is-current::after {
+  width: 54px;      
+}
+
+.footer-link-list {
+}
+
+.footer-soc1als-list {
+  gap: 5px;
+}
+
+.footer a:hover {
+  color: var(--color-grey);
+}
+
 @media(max-width: 1850px) {
+  .cofee-cafes-info-item-main-image {
+    margin-left: 40px;
+    margin-right: 35px;
+  }
+
   .team-list {
     display: grid;
     grid-template-columns: repeat(3, 320px);
@@ -1221,6 +1303,7 @@ select::-ms-expand {
   .cofee-cafes-info-item {
     align-items: center;
     padding-bottom: 0;
+    width: 100%;
   }
 
   .cofee-cafes-info-item span {
@@ -1229,7 +1312,7 @@ select::-ms-expand {
     align-items: center;
     transform: rotate(0deg);
     height: 6.25vw;
-    width: 100vw;
+    width: 100%;
     margin-block: 23px;
     text-align: center;
   }
@@ -1264,6 +1347,24 @@ select::-ms-expand {
 
   .menu {
     flex-direction: column-reverse;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+
+  .footer-body {
+    display: flex;
+    gap: 10vw;
+  } 
+
+  .footer-contacts-list {
+    margin-right: 0;
+  }
+
+  .footer-soc1als-list {
+    gap: 5px;
+    padding-right: 0;
   }
 }
 
@@ -1341,8 +1442,8 @@ select::-ms-expand {
   }
 
   .with-love-logo {
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 40px;
+    margin-left: -80px;
   }
 
   .catalog-blands-list {
@@ -1351,7 +1452,7 @@ select::-ms-expand {
 
   .catalog-blands-body {
   position: relative;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   padding-left: 93px;
   padding-right: 50px;
@@ -1372,7 +1473,7 @@ select::-ms-expand {
   }
 
   .feedback-body {
-    width: 100vw;
+    width: 100%;
     padding-block: 50px;
   }
 
@@ -1385,7 +1486,7 @@ select::-ms-expand {
   }
 
   .feedback-image {
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
     margin-top: -265px;
     z-index: -1;
@@ -1433,6 +1534,17 @@ select::-ms-expand {
 }
 
 @media(max-width: 940px) {
+  .header {
+  }
+
+  .header-menu {
+    flex-direction: column;
+  }
+
+  .header-logo {
+    order: -1;
+  }
+
   .blog-posts-item {
     flex-direction: column;
   }
@@ -1446,37 +1558,29 @@ select::-ms-expand {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 384px));
   }
+
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-body {
+    flex-direction: column;
+  }
 }
 
 @media(max-width: 650px) {
-  .header {
-    position: relative;
+  .header { 
+    padding-bottom: 30px;
   }
 
   .header-menu {
+    gap: 60px;
+  }
+
+  .header-menu-list-first,
+  .header-menu-list-second {
     flex-direction: column;
-    margin-bottom: 20px;
-    max-width: 100%;
-  }
-
-  .header-menu-link {
-    font-size: 22px;
-  }
-
-  .header-logo {
-    order: -1;
-  }
-
-  .header-logo-image {
-    width: 250px;
-  }
-
-  .header-star-button {
-    position: relative;
-    width: 50%;
-    object-fit: cover;
-    margin-top: -140px;
-    z-index: -1;
   }
 }
 
